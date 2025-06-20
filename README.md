@@ -13,3 +13,7 @@ To run as a chrome extension locally:
 and then load unpacked the build directory. You will need to build and refresh the extension when you make changes until I can be bothered to automate this.
 
 TODO: make component draggable to move out of way
+TODO: prevent page styles from affecting it
+TODO: add cute animation on open and close
+TODO: add drag
+TODO: persist across tabs
