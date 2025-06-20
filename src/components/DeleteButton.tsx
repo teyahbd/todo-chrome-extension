@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import closeIcon from "../assets/close.svg";
 
 type IconButtonType = {
   size?: "lg" | "md" | "sm";
@@ -79,7 +80,7 @@ const DeleteButton = ({
       disabled={disabled}
       onClick={handleOnClick}
     >
-      <img src={"../assets/close.svg"} alt="icon" />
+      <img src={closeIcon} alt="icon" />
     </button>
   );
 };

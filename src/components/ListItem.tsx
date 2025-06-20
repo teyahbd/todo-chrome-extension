@@ -22,7 +22,7 @@ const ListItem = ({ itemColor, index, item, setTasks }: ListItemProps) => {
   return (
     <div
       className={classNames(
-        "group block px-4 py-2 text-sm border-black border-2 hover:font-medium focus:outline-none hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] flex justify-between items-center",
+        "group block px-4 py-2 text-sm border-black border-2 hover:font-medium focus:outline-none hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] flex justify-between items-center bg-white",
         { "hover:bg-violet-200": itemColor === "violet" },
         { "hover:bg-pink-200": itemColor === "pink" },
         { "hover:bg-red-200": itemColor === "red" },

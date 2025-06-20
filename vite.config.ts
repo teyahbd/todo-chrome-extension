@@ -23,7 +23,16 @@ export default defineConfig({
     outDir: "build",
     rollupOptions: {
       input: {
-        main: "./index.html",
+        main: "./src/main.tsx",
+      },
+      output: {
+        entryFileNames: "bundle.js",
+        assetFileNames: (chunk) => {
+          if (chunk.name && chunk.name.endsWith(".css")) {
+            return "bundle.css";
+          }
+          return "assets/[name].[ext]";
+        },
       },
     },
   },
