@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import DropDown from "./components/DropDown";
 
+type Task = { id: string; name: string; checked: boolean };
+
 // Mock chrome.storage for local dev
 const isChromeExt = typeof chrome !== "undefined" && chrome.storage;
 const storage = isChromeExt
@@ -17,11 +19,10 @@ const storage = isChromeExt
     };
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {
     storage.get(["myTasks"], (result) => {
-      console.log("Getting tasks from storage:", result.myTasks);
       if (result.myTasks) {
         setTasks(result.myTasks);
       }
@@ -32,10 +33,12 @@ function App() {
     storage.set({ myTasks: tasks });
   }, [tasks]);
 
+  const incompleteTasks = tasks.filter((task) => !task.checked).length;
+
   return (
     <DropDown
-      title={`You've got ${tasks.length} thing${
-        tasks.length !== 1 ? "s" : ""
+      title={`You've got ${incompleteTasks} thing${
+        incompleteTasks !== 1 ? "s" : ""
       } to do`}
       list={tasks}
       setTasks={setTasks}
