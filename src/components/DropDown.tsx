@@ -30,7 +30,8 @@ const DropDown = ({
           { "bg-yellow-200 hover:bg-yellow-300": color === "yellow" },
           { "bg-lime-200 hover:bg-lime-300": color === "lime" },
           { "bg-cyan-200 hover:bg-cyan-300": color === "cyan" },
-          { "opacity-75": !open }
+          { "opacity-75": !open },
+          "hover:opacity-100"
         )}
         id="menu-button"
         aria-expanded="true"
